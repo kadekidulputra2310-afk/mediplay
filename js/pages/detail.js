@@ -7,7 +7,7 @@ function detail(id, tab) {
     p.tabs.push(tab);
     sv();
   }
-  const T = ["overview", "causes", "mechanism", "video", "symptoms", "prevention", "quiz"],
+  const T = ["overview", "causes", "mechanism", "symptoms", "prevention", "quiz"],
     ul = (a) => `<ul>${a.map((x) => `<li>${x}</li>`).join("")}</ul>`;
   let c = "";
   if (tab == "overview")
@@ -16,7 +16,6 @@ function detail(id, tab) {
     c = `<div class="grid"><div class="card"><h3>🧫 Penyebab</h3>${ul(d.causes)}</div><div class="card"><h3>⚠️ Faktor risiko</h3>${ul(d.riskFactors)}</div><div class="card"><h3>⚡ Faktor pemicu</h3>${ul(d.triggers)}</div></div>`;
   if (tab == "mechanism")
     c = `<h2>How Does the Disease Happen?</h2><div class="flow">${d.mechanism.map((m, i) => `${i ? '<div class="a">↓</div>' : ""}<div class="n">${m}</div>`).join("")}</div><h2 style="margin-top:28px">Video Mekanisme Penyakit</h2>${vid(d)}`;
-  if (tab == "video") c = `<h2>Video Mekanisme Penyakit</h2>${vid(d)}`;
   if (tab == "quiz")
     c = `<div class="card" style="text-align:center"><div class="ico">📝</div><h2>Kuis ${d.name}</h2><p>Jawab ${Math.min(QUIZ_LEN, d.quiz.length)} soal acak lalu baca penjelasannya. Tidak perlu main game.</p><a class="btn" href="#/quiz/${d.id}">📝 MULAI KUIS</a></div>`;
   if (tab == "symptoms")

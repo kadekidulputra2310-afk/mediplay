@@ -42,7 +42,7 @@ const pd = (id) => P[id] || (P[id] = { tabs: [], video: 0, ans: 0, cor: 0, done:
 const pct = (id) => {
   const p = pd(id);
   return Math.round(
-    Math.min(p.tabs.length / 7, 1) * 30 + p.video * 20 + Math.min(p.cor / 5, 1) * 25 + p.done * 25,
+    Math.min(p.tabs.length / 6, 1) * 30 + p.video * 20 + Math.min(p.cor / 5, 1) * 25 + p.done * 25,
   );
 };
 
